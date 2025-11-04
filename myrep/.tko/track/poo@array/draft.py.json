@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-04_08-30-51",
+            "content": "@@ -140,69 +140,17 @@\n o%22%5D%0A\n-lista_foo.append(%22Rato%22)%0Alista_foo.insert(0, %22Canguru%22)%0A\n print\n+(len\n (lis\n@@ -156,9 +156,10 @@\n sta_foo)\n+)\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-04_08-33-40",
+            "content": "@@ -196,41 +196,8 @@\n u%22)%0A\n-lista_foo.pop()%0Alista_foo.pop(0)%0A\n prin\n@@ -208,8 +208,9 @@\n sta_foo)\n+%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-04_08-34-40",
+            "content": "@@ -229,38 +229,14 @@\n (0)%0A\n-lista_foo.insert(2, %22Castor%22)%0A\n+print(\n list\n@@ -244,11 +244,5 @@\n _foo\n-.pop(1\n )\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-11-04_08-35-23",
+            "content": "@@ -275,21 +275,4 @@\n p(1)\n-%0Aprint(lista_foo)\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-04_08-35-43",
+            "content": "@@ -282,17 +282,8 @@\n int(\n-%22,%22.join(\n list\n@@ -288,9 +288,8 @@\n sta_foo)\n-)\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-04_08-37-17",
+            "content": "@@ -283,11 +283,9 @@\n nt(%22\n- , \n+,\n %22.jo\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-04_08-37-29",
+            "content": "@@ -283,10 +283,11 @@\n nt(%22\n-%5Cn\n+ , \n %22.jo\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-04_08-37-42",
+            "content": "@@ -276,24 +276,17 @@\n (1)%0A\n-# \n print(%22\n-lorrana\n+%5Cn\n %22.jo\n@@ -303,124 +303,4 @@\n oo))\n- %0A%0Anumeros = list(range(21))%0Aimport random%0Aoutros_numeros = %5Brandom.randint(0, 99) for _ in range(10)%5D%0Aprint(numeros%5B7%5D)\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-04_08-42-38",
+            "content": "@@ -426,109 +426,8 @@\n eros\n-)%0A%0A# for numeros in numeros:%0A    # print(numeros)%0A%0Afor i in range(len(numeros)):%0A    print(i, numeros%5Bi\n+%5B7\n %5D)\n",
+            "lines": "19"
+        },
+        {
+            "label": "2025-11-04_08-50-14",
+            "content": "vazio: list[int] = []\n\nclass Foo:\n    def __init__(self, nome: str):\n        self.nome = nome\n\nlista_foo: list[Foo] = [\"Sapo\", \"Pato\", \"Gato\"]\nlista_foo.append(\"Rato\")\nlista_foo.insert(0, \"Canguru\")\nlista_foo.pop()\nlista_foo.pop(0)\nlista_foo.insert(2, \"Castor\")\nlista_foo.pop(1)\n# print(\"lorrana\".join(lista_foo)) \n\nnumeros = list(range(21))\nimport random\noutros_numeros = [random.randint(0, 99) for _ in range(10)]\nprint(numeros)\n\n# for numeros in numeros:\n    # print(numeros)\n\nfor i in range(len(numeros)):\n    print(i, numeros[i])",
+            "lines": "25"
+        }
+    ]
+}

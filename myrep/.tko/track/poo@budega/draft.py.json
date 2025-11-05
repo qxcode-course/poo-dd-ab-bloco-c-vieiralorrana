@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-05_09-14-32",
+            "content": "@@ -881,16 +881,22 @@\n ciana%22)%0A\n+print(\n mercanti\n@@ -900,47 +900,5 @@\n ntil\n-.arrive(cliente)%0Amercantil.arrive(cliente2\n )\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-05_09-15-13",
+            "content": "class Cliente:\n    def __init__(self, nome: str):\n        self.__nome: str = nome\n    \n    def getNome(self):\n        return self.__nome\n    \n    def __str__(self):\n        return f\"{self.getNome()}\"\n    \nclass Mercantil:\n    def __init__(self, quantidade_caixa: int):\n        self.caixa: list[Cliente | None] = []\n        for _ in range(quantidade_caixa):\n            self.caixa.append(None)\n        self.fila: list[Cliente] = []\n    \n    def __str__(self) -> str:\n        pessoas = \", \".join([(\"-----\" if x is None else str(x)) for x in self.caixa])  \n        saida: str = f\"Caixas: [{pessoas} ]\\n\" \n        esperando = \", \".join([str(x) for x in self.fila])\n        saida += f\"Espera: [{esperando}]\" \n        return saida\n    \n    def arrive(self, cliente: Cliente):\n        self.fila.append(cliente)\n\n\nmercantil = Mercantil(4)\ncliente = Cliente(\"Maria\")\ncliente2 = Cliente(\"Luciana\")\nmercantil.arrive(cliente)\nmercantil.arrive(cliente2)",
+            "lines": "33"
+        }
+    ]
+}

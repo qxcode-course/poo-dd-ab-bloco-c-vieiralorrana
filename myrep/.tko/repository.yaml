@@ -21,6 +21,7 @@ expanded:
 tasks:
   poo@array: '{rate:100, alone:10, study:60}'
   poo@budega: '{rate:100, alone:10, study:60}'
+  poo@lapiseira: '{rate:42}'
 flags:
   quests: 0
   tracks: 0

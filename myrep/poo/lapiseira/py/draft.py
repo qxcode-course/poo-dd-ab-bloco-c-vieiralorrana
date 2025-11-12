@@ -26,20 +26,25 @@ class Lapiseira:
     
     def inserir(self, grafite: Grafite):
         if grafite.calibre != self.calibre:
-            print("fail: calibre incompativel")
+            print("fail: calibre incompatível")
         else:
             self.tambor.append(grafite)
     
     def puxar(self):
         if self.bico is not None:
-            print("fail: ja existe grafite")
+            print("fail: ja existe grafite no bico")
         else:
             self.bico = self.tambor[0]
             del self.tambor[0]
+    
+    def remover(self):
+        aux = self.bico
+        self.bico = None
+        return aux
         
     def escrever(self):
         if self.bico is None:
-            print("fail: nao tem grafite")
+            print("fail: nao existe grafite no bico")
             return
         
         if self.bico.tamanho <= 10:
@@ -59,4 +64,34 @@ class Lapiseira:
         bico = "" if self.bico is None else self.bico
         tambor = "".join([str(x) for x in self.tambor])
         return f"calibre: {self.calibre:.1f}, bico: [{bico}], tambor: <{tambor}>"
-    
+
+def main():
+    lapiseira = Lapiseira(0)
+    grafite = Grafite(0, "", 0)
+
+    while True:
+        line = input()
+        print("$" + line)
+        args = line.split(" ")
+
+        if args[0] == "end":
+            break
+        elif args[0] == "show":
+            print(lapiseira)
+        elif args[0] == "init":
+            calibre = float(args[1])
+            lapiseira = Lapiseira(calibre)
+        elif args[0] == "insert":
+            calibre = float(args[1])
+            dureza = args[2]
+            tamanho = int(args[3])
+            grafite = Grafite(calibre, dureza, tamanho)
+            lapiseira.inserir(grafite)
+        elif args[0] == "pull":
+            lapiseira.puxar()
+        elif args[0] == "remove":
+            lapiseira.remover()
+        elif args[0] == "write":
+            lapiseira.escrever()
+
+main()

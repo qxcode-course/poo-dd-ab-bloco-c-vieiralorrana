@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-12_14-11-38",
+            "content": "class Grafite:\n    def __init__(self, calibre: float, dureza: str, tamanho: int):\n        self.calibre = calibre \n        self.dureza = dureza\n        self.tamanho = tamanho \n    \n    def usoPorFolha(self):\n        if self.dureza == \"HB\":\n            return 1\n        if self.dureza == \"2B\":\n            return 2\n        if self.dureza == \"4B\":\n            return 4\n        if self.dureza == \"6B\": \n            return 6\n    \n    def __str__(self):\n        return f\"{self.calibre:.1f}:{self.dureza}:{self.tamanho}\"\n    \n\nclass Lapiseira:\n    def __init__(self, calibre: float):\n        self.calibre = calibre \n        self.bico: Grafite | None = None\n        self.tambor: list[Grafite] = []\n    \n    def inserir(self, grafite: Grafite):\n        if grafite.calibre != self.calibre:\n            print(\"fail: calibre incompativel\")\n        else:\n            self.tambor.append(grafite)\n    \n    def puxar(self):\n        if self.bico is not None:\n            print(\"fail: ja existe grafite\")\n        else:\n            self.bico = self.tambor[0]\n            del self.tambor[0]\n        \n    def escrever(self):\n        if self.bico is None:\n            print(\"fail: nao tem grafite\")\n            return\n        \n        if self.bico.tamanho <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        \n        uso = self.bico.usoPorFolha()\n        tamanhoFinal = self.bico.tamanho - uso\n\n        if tamanhoFinal < 10:\n            print(\"fail: folha incompleta\")\n            return\n        \n        self.bico.tamanho(tamanhoFinal)\n    \n    def __str__(self):\n        return f\"calibre: {self.calibre}, bico: [{self.bico}], tambor: <{self.tambor}>\"\n    \n\nlapiseira = Lapiseira(5)\nprint(lapiseira)\n",
+            "lines": "63"
+        }
+    ]
+}

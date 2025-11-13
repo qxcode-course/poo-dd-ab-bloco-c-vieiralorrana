@@ -58,12 +58,12 @@ class Lapiseira:
             print("fail: folha incompleta")
             return
         
-        self.bico.tamanho(tamanhoFinal)
+        self.bico.tamanho = tamanhoFinal
     
     def __str__(self):
-        bico = "" if self.bico is None else self.bico
+        bico = [] if self.bico is None else str(self.bico)
         tambor = "".join([str(x) for x in self.tambor])
-        return f"calibre: {self.calibre:.1f}, bico: [{bico}], tambor: <{tambor}>"
+        return f"calibre: {self.calibre:.1f}, bico: {bico}, tambor: <{tambor}>"
 
 def main():
     lapiseira = Lapiseira(0)

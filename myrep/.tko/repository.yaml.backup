@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\lorra\Documents\poo_tarefas\poo-dd-ab-bloco-c-vieiralorrana\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-12 14:10:09'
+  cache_timestamp: '2025-11-13 09:59:46'
   filters:
   - listas
 expanded:
@@ -21,6 +21,7 @@ expanded:
 tasks:
   poo@array: '{rate:100, alone:10, study:60}'
   poo@budega: '{rate:100, alone:10, study:60}'
+  poo@lapiseira: '{rate:85}'
 flags:
   quests: 0
   tracks: 0
@@ -28,4 +29,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@pula-pula

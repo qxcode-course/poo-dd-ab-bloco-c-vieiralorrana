@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-13_10-50-04",
+            "content": "@@ -409,1651 +409,89 @@\n   %0Ac\n-lass Pulapula:%0A    def __init__(self):%0A        self.pulando: list%5BCrianca%5D = %5B%5D%0A        self.esperando: list%5BCrianca%5D = %5B%5D%0A    %0A    def arrive(self, crianca: Crianca):%0A        self.esperando.append(crianca)%0A    %0A    def enter(self):%0A        self.pulando = self.esperando%5B0%5D%0A        del self.esperando%5B0%5D%0A    %0A    def leave(self):%0A        crianca = self.pulando.pop(-1)%0A        self.esperando.insert(0, crianca)%0A    %0A    def remove(self, crianca: Crianca):%0A        if crianca not in self.pulando:%0A            print(f%22%7Bcrianca.getNome()%7D nao esta no pula-pula%22)%0A            return%0A        else:%0A            self.pulando.remove(crianca)%0A    %0A    def __str__(self):%0A        espera = %22, %22.join(%22%22 if len(self.esperando) == 0 else str(x) for x in self.esperando)%0A        saida: str = f%22%7Bespera%7D =%3E %22%0A        pulando = %22, %22.join(%22%22 if len(self.pulando) == 0 else str(x) for x in self.pulando)%0A        saida += f%22%7Bpulando%7D%22%0A        return saida%0A%0Adef main():%0A    crianca = Crianca()%0A    pulapula = Pulapula()%0A%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22show%22:%0A            print(pulapula)%0A        elif args%5B0%5D == %22arrive%22:%0A            nome = args%5B1%5D%0A            idade = int(args%5B2%5D)%0A            crianca.setNome(nome)%0A            crianca.setIdade(idade)%0A            pulapula.arrive(crianca)%0A        elif args%5B0%5D == %22enter%22:%0A            pulapula.enter()%0A        elif args%5B0%5D == %22leave%22:%0A            pulapula.leave()%0A        elif args%5B0%5D == %22remove%22:%0A            crianca = args%5B1%5D%0A            pulapula.remove(crianca)%0Amain()%0A%0A        \n+rian%C3%A7a1 = Crianca()%0Acrian%C3%A7a1.setNome(%22fernanda%22)%0Acrian%C3%A7a1.setIdade(5)%0Aprint(crian%C3%A7a1)\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-13_11-36-15",
+            "content": "@@ -1095,18 +1095,16 @@\n %22.join(%22\n-%5B%5D\n %22 if len\n@@ -1189,17 +1189,16 @@\n = f%22\n-%5B\n %7Bespera%7D\n %5D =%3E\n@@ -1193,17 +1193,16 @@\n %7Bespera%7D\n-%5D\n  =%3E %22%0A  \n@@ -1310,17 +1310,16 @@\n da += f%22\n-%5B\n %7Bpulando\n@@ -1319,17 +1319,16 @@\n pulando%7D\n-%5D\n %22%0A      \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-13_11-36-58",
+            "content": "@@ -1361,16 +1361,40 @@\n main():%0A\n+    crianca = Crianca()%0A\n     pula\n@@ -1780,17 +1780,16 @@\n (idade)%0A\n-%0A\n         \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-13_11-39-47",
+            "content": "@@ -33,31 +33,8 @@\n self\n-, nome: str, idade: int\n ):%0A \n@@ -54,20 +54,18 @@\n _nome = \n-nome\n+%22%22\n %0A       \n@@ -72,37 +72,33 @@\n  self.__idade = \n-idade\n+0\n %0A%0A    def getIda\n@@ -1756,16 +1756,17 @@\n (idade)%0A\n+%0A\n         \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-13_11-40-44",
+            "content": "@@ -1419,32 +1419,8 @@\n la()\n-%0A    crianca = Crianca()\n %0A%0A  \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-13_11-40-58",
+            "content": "@@ -1442,13 +1442,8 @@\n nca(\n-%22%22, 0\n )%0A%0A \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-13_11-41-11",
+            "content": "@@ -64,24 +64,26 @@\n        self.\n+__\n nome = nome%0A\n@@ -91,24 +91,26 @@\n        self.\n+__\n idade = idad\n@@ -112,16 +112,256 @@\n  idade%0A%0A\n+    def getIdade(self):%0A        return self.__idade%0A    %0A    def getNome(self):%0A        return self.__nome%0A    %0A    def setIdade(self, idade: int):%0A        self.__idade = idade%0A%0A    def setNome(self, nome: str):%0A        self.__nome = nome%0A%0A\n     def \n@@ -402,20 +402,25 @@\n elf.\n-n\n+getN\n ome\n+()\n %7D:%7Bself.\n idad\n@@ -415,21 +415,26 @@\n %7D:%7Bself.\n-i\n+getI\n dade\n+()\n %7D%22%0A    %0A\n@@ -1415,16 +1415,45 @@\n lapula()\n+%0A    crianca = Crianca(%22%22, 0)\n %0A%0A    wh\n@@ -1767,25 +1767,52 @@\n anca\n- = Crianca(nome, \n+.setNome(nome)%0A            crianca.setIdade(\n idad\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-13_11-51-09",
+            "content": "@@ -413,39 +413,44 @@\n (self):%0A        \n-crianca\n+self.pulando\n  = self.esperand\n@@ -458,45 +458,8 @@\n %5B0%5D%0A\n-        self.pulando.append(crianca)%0A\n     \n@@ -484,17 +484,16 @@\n ando%5B0%5D%0A\n-%0A\n     %0A   \n@@ -705,20 +705,25 @@\n crianca.\n-n\n+getN\n ome\n+()\n %7D nao es\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-13_12-05-35",
+            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.nome = nome\n        self.idade = idade\n\n    def __str__(self):\n        return f\"{self.nome}:{self.idade}\"\n    \nclass Pulapula:\n    def __init__(self):\n        self.pulando: list[Crianca] = []\n        self.esperando: list[Crianca] = []\n    \n    def arrive(self, crianca: Crianca):\n        self.esperando.append(crianca)\n    \n    def enter(self):\n        crianca = self.esperando[0]\n        self.pulando.append(crianca)\n        del self.esperando[0]\n\n    \n    def leave(self):\n        crianca = self.pulando.pop(-1)\n        self.esperando.insert(0, crianca)\n    \n    def remove(self, crianca: Crianca):\n        if crianca not in self.pulando:\n            print(f\"{crianca.nome} nao esta no pula-pula\")\n            return\n        else:\n            self.pulando.remove(crianca)\n    \n    def __str__(self):\n        espera = \", \".join(\"[]\" if len(self.esperando) == 0 else str(x) for x in self.esperando)\n        saida: str = f\"[{espera}] => \"\n        pulando = \", \".join(\"\" if len(self.pulando) == 0 else str(x) for x in self.pulando)\n        saida += f\"[{pulando}]\"\n        return saida\n\ndef main():\n    pulapula = Pulapula()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(pulapula)\n        elif args[0] == \"arrive\":\n            nome = args[1]\n            idade = int(args[2])\n            crianca = Crianca(nome, idade)\n            pulapula.arrive(crianca)\n        elif args[0] == \"enter\":\n            pulapula.enter()\n        elif args[0] == \"leave\":\n            pulapula.leave()\n        elif args[0] == \"remove\":\n            crianca = args[1]\n            pulapula.remove(crianca)\nmain()\n\n        ",
+            "lines": "67"
+        }
+    ]
+}

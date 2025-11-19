@@ -21,7 +21,7 @@ class Pulapula:
 
     
     def leave(self):
-        crianca = self.pulando.pop(-1)
+        crianca = self.pulando.pop()
         self.esperando.insert(0, crianca)
     
     def remove(self, crianca: Crianca):
@@ -32,11 +32,9 @@ class Pulapula:
             self.pulando.remove(crianca)
     
     def __str__(self):
-        espera = ", ".join("[]" if len(self.esperando) == 0 else str(x) for x in self.esperando)
-        saida: str = f"[{espera}] => "
-        pulando = ", ".join("" if len(self.pulando) == 0 else str(x) for x in self.pulando)
-        saida += f"[{pulando}]"
-        return saida
+        espera = ", ".join("" if len(self.esperando) == 0 else str(x) for x in self.esperando)
+        pulando = ", ".join("" if len(self.pulando) else str(x) for x in self.esperando)
+        return f"[{espera}] => [{pulando}]"
 
 def main():
     pulapula = Pulapula()

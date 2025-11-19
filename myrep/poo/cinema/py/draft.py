@@ -21,6 +21,6 @@ class Cliente:
 class Cinema:
     def __init__(self, capacidade: int):
         self.capacidade = capacidade
-        
+        self.seats: list[Cliente | None] = []
     
 
